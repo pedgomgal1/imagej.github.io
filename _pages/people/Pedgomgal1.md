@@ -9,4 +9,4 @@ linkedin: in/pedro-javier-gómez-gálvez-676313b2/
 website: http://lmescudero.blogspot.com.es/
 ---
 
-**Pedro Gomez-Galvez** is a PhD student in computational biology with Luisma Escudero at University of Seville. He is one of the principal developers of [EpiGraph](/plugins/epigraph).
+**Pedro Gomez-Galvez**, PhD in computational biology at the University of Seville. He is one of the principal developers of [EpiGraph](/plugins/epigraph).
