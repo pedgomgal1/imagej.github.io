@@ -5,23 +5,37 @@ artifact: EpiGraph
 categories: [Uncategorized]
 ---
 
-{% include notice icon="info" content="Please note that, this plugin is focused on biology research. This web page doesn't provide a complete explanation of usability. Deep detailed information can be found in the manuscript: [**EpiGraph: an open-source platform to quantify epithelial organization**](https://www.biorxiv.org/content/10.1101/217521v2), and in the official lab website: https://www.scutoids.es/" %}
+> **Note:** EpiGraph is designed for biological research. For detailed usage, see the manuscript: [**EpiGraph: an open-source platform to quantify epithelial organization**](https://www.biorxiv.org/content/10.1101/217521v2) and the [official lab website](https://lmescudero.blogspot.com/).
 
-{\| \|style="vertical-align:top" \| \|<span>  
-</span>}
+## What is EpiGraph?
 
+[EpiGraph](/plugins/epigraph) is a Fiji plugin that measures the organization of epithelial tissues using computational geometry and graph theory.
 
-## **Introduction**
+- Cells are treated as a network: edges represent contacts.  
+- Networks are split into **graphlets** (small subgraphs).  
+- Comparing graphlet distributions to references gives **Graphlet Degree Distribution Distances (GDDs)**, which measure tissue organization.
 
-The [EpiGraph](/plugins/epigraph) is a Fiji plugin that combines computational geometry and graph theory to measure the degree of arrangement in any made by computational or natural tessellation. Here, a tessellation is treated as a network in which the edges are defined by the regions contacts. A network can be split up into different subgraphs named graphlets. The comparison of the quantity of each type of graphlets with the reference tessellations provide the Graphlet degree Distribution Distances (GDDs) as a marker of arrangement. This plugin has into account three different reference patterns: a "hexagonal lattice", a "random Voronoi Diagram" (generated Voronoi from seeds located randomly) and a "Voronoi Diagram 5" (which represents the common polygon distribution in nature). They have been used to compute a set of references that quantify organization: Epi-Hexagons, Epi-Random and Epi-Voronoi5, respectively.
+**Reference patterns:**
 
-It contains a set of visualization tools, together with graphical user interfaces for easy extraction and analysis of information. The collected data of arrangement can be exported to excel tables for being processed with other tools as well.
+1. **Hexagonal lattice** → Epi-Hexagons  
+2. **Random Voronoi Diagram** → Epi-Random  
+3. **Voronoi Diagram 5** → Epi-Voronoi5  
 
-On top, to encourage the sharing of resources, [EpiGraph](/plugins/epigraph) is published under an open-source (GPLv3) license, which can be downloaded from https://github.com/ComplexOrganizationOfLivingMatter/Epigraph/blob/-/LICENSE.
+EpiGraph includes visualization tools, a user-friendly GUI, and Excel export. It is open-source under **GPLv3**: [GitHub](https://github.com/ComplexOrganizationOfLivingMatter/Epigraph/blob/-/LICENSE).
 
-## **Pipeline**
+---
 
-EpiGraph consists of a pipeline of 5 very simple steps. First, the skeleton of a mosaic image is uploaded and the individual cells are identified. Second, there is a step where the user selects the distance threshold to identify two cells as neighbours. Here it is possible to select different thresholds and to check the number of neighbours of every cell in each case. Third, a ROI is selected. There are several possibilities such as a default ROI from the image or the selection of individual cells. Fourth, the graphlet information for the selected cells is calculated, obtaining the Epi-Hexagons, Epi-Random and Epi-Voronoi5. These values are incorporated to a table and serve as input data for a statistical analysis that indicates if a new image is inside or outside of the CVTn path, and what is the Voronoi diagram that presents the most similar organization to the sample. The fifth step includes the classification and labelling of different images in order to represent them in a new window. This final phase allows exporting the representation of the data in a three-dimensional graph. The next videos explain in detail each operation and the three GUI windows are shown as well:
+## How it works
+
+### 5-step pipeline:
+
+1. **Upload image & identify cells** – Upload your mosaic and detect cells.  
+2. **Set neighbor distance** – Choose how to define neighboring cells.  
+3. **Select ROI** – Pick the region of interest or specific cells.  
+4. **Calculate graphlets** – Compute Epi-Hexagons, Epi-Random, Epi-Voronoi5. Analyze results and compare to reference patterns.  
+5. **Visualize & classify** – Label images, generate 3D plots, and export data.  
+
+---
 
 ### Installation and initial settings
 
